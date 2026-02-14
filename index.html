@@ -77,7 +77,7 @@
         MouseSensor, TouchSensor, useSensor, useSensors 
       } from '@dnd-kit/core';
 
-      // --- データベース (計100問) ---
+      // --- データベース (計100問・すべて1文字カード) ---
       const IDIOM_DATABASE = {
         elementary_low: [
           { answer: '一石二鳥', reading: 'いっせきにちょう', question: '一つのことをして、二つの利益を得ること。', explanation: '石を一つ投げて、二羽の鳥を仕留めるという意味。', distractors: ['三', '犬', '空', '大', '小', '早', '力', '山'] },
@@ -111,7 +111,7 @@
           { answer: '以心伝心', reading: 'いしんでんしん', question: '言葉を使わなくても気持ちが通じ合うこと。', explanation: '心から心へ伝えるという意味の仏教用語。', distractors: ['話', '語', '聞', '耳', '目', '通', '知', '覚'] },
           { answer: '絶体絶命', reading: 'ぜったいぜつめい', question: 'どうにも逃げられない、追い詰められた状態。', explanation: '命が絶えるような、極限のピンチ。', distractors: ['危', '険', '死', '活', '逃', '追', '窮', '地'] },
           { answer: '文武両道', reading: 'ぶんぶりょうどう', question: '勉強とスポーツの両方に優れていること。', explanation: '文（学問）と武（武道）の両方の道。', distractors: ['学', '体', '技', '術', '全', '能', '才', '華'] },
-          { answer: '油断大敵', reading: 'ゆだんたいてき', question: '少しでも怠れば、大きな失敗を招くということ。', explanation: '油断こそが最も恐ろしい敵という意味。', distractors: ['不', '注', '意', '心', '隙', '守', '攻', '敗'] },
+          { answer: '油断大敵', reading: 'ゆだんたいてき', question: '少しでも怠れば、大きな失敗を招くということ。', explanation: '油断こそが最も恐しい敵という意味。', distractors: ['不', '注', '意', '心', '隙', '守', '攻', '敗'] },
           { answer: '猪突猛進', reading: 'ちょとつもうしん', question: '目標に向かって、向こう見ずに突き進むこと。', explanation: 'イノシシが一直線に走る様子から。', distractors: ['慎', '重', '考', '慮', '後', '退', '静', '止'] },
           { answer: '温故知新', reading: 'おんこちしん', question: '昔の事を研究して、新しい知識を得ること。', explanation: '古いものをたずねて新しいことを知る。', distractors: ['新', '鮮', '研', '究', '学', '問', '未', '来'] },
           { answer: '単刀直入', reading: 'たんとうちょくにゅう', question: '前置きなしに、いきなり本題に入ること。', explanation: '一人で刀を持って敵陣に切り込むことから。', distractors: ['遠', '慮', '婉', '曲', '周', '到', '準', '備'] },
@@ -125,43 +125,43 @@
         ],
         junior_high: [
           { answer: '誠心誠意', reading: 'せいしんせいい', question: '真心を持って人に接すること。', explanation: 'うそがなく、一生懸命な心。', distractors: ['偽', '善', '商', '売', '愛', '敬', '信', '頼'] },
-          { answer: '意味深長', reading: 'いみしんちょう', question: '言葉の裏に深い意味が含まれていること。', explanation: '含みのある言い方のこと。', distractors: ['単純', '明白', '浅', '短', '理', '解', '直', '観'] },
+          { answer: '意味深長', reading: 'いみしんちょう', question: '言葉の裏に深い意味が含まれていること。', explanation: '含みのある言い方のこと。', distractors: ['単', '純', '明', '白', '浅', '短', '理', '解'] },
           { answer: '支離滅裂', reading: 'しりめつれつ', question: 'まとまりがなく、バラバラでわけがわからないこと。', explanation: '話のつじつまが合わない様子。', distractors: ['整', '然', '一', '貫', '論', '理', '明', '快'] },
           { answer: '切磋琢磨', reading: 'せっさたくま', question: '仲間同士で励まし合い、向上すること。', explanation: '自分を磨き上げるという意味。', distractors: ['怠', '慢', '孤', '立', '競', '争', '喧', '嘩'] },
           { answer: '波瀾万丈', reading: 'はらんばんじょう', question: '変化が激しく、出来事が非常に多いこと。', explanation: 'ドラマチックな人生のたとえ。', distractors: ['平', '穏', '安', '泰', '退', '屈', '単', '調'] },
           { answer: '悠々自適', reading: 'ゆうゆうじてき', question: 'のんびりと自分の思うままに暮らすこと。', explanation: '世間に縛られない生活。', distractors: ['多', '忙', '束', '縛', '窮', '屈', '焦', '燥'] },
-          { answer: '危機一髪', reading: 'ききいっぱつ', question: '非常に危険な、ぎりぎりの状態。', explanation: '髪の毛一本ほどの差で助かる様子。', distractors: ['安', '全', '余裕', '勝', '利', '決', '定'] },
+          { answer: '危機一髪', reading: 'ききいっぱつ', question: '非常に危険な、ぎりぎりの状態。', explanation: '髪の毛一本ほどの差で助かる様子。', distractors: ['安', '全', '余', '裕', '勝', '利', '決', '定'] },
           { answer: '起死回生', reading: 'きしかいせい', question: '絶望的な状態から、一気に持ち直すこと。', explanation: '死にそうな状態から生き返ること。', distractors: ['絶', '望', '敗', '北', '没', '落', '終', '了'] },
-          { answer: '五里霧中', reading: 'ごりむちゅう', question: '手がかりがなく、どうしていいか迷うこと。', explanation: '深い霧の中で方向を失うこと。', distractors: ['明白', '発見', '解決', '光', '明', '進', '路'] },
-          { answer: '言行一致', reading: 'げんこういっち', question: '言うことと、することと同じであること。', explanation: '口先だけでなく実行すること。', distractors: ['矛盾', '反対', '嘘', '偽', '裏', '切'] },
-          { answer: '三位一体', reading: 'さんみいったい', question: '三つのものが一つに組み合わさること。', explanation: 'バラバラなものが協力して一つになる。', distractors: ['分離', '分裂', '対', '立', '個', '別', '四', '五'] },
-          { answer: '主客転倒', reading: 'しゅかくてんとう', question: '立場や重要度が逆転してしまうこと。', explanation: '主人と客が入れ替わるという意味。', distractors: ['正常', '順位', '本', '来', '当', '然', '当', '初'] },
-          { answer: '諸行無常', reading: 'しょぎょうむじょう', question: '世の中のすべてのものは、絶えず変化すること。', explanation: '永遠に変わらないものはない。', distractors: ['永遠', '不変', '固定', '恒', '久', '持', '続'] },
-          { answer: '針小棒大', reading: 'しんしょうぼうだい', question: 'ささいなことを、大げさに言うこと。', explanation: '針ほどのことを棒ほどに言う。', distractors: ['事実', '正確', '過', '小', '微', '細', '真', '実'] },
-          { answer: '画龍点睛', reading: 'がりょうてんせい', question: '物事を完成させるための、最後の仕上げ。', explanation: '龍の絵に目を描き入れること。', distractors: ['失敗', '中途', '未', '完', '略', '式', '初', '歩'] },
-          { answer: '勧善懲悪', reading: 'かんぜんちょうあく', question: '善いことを奨励し、悪いことを懲らしめること。', explanation: '正義が勝つストーリー。', distractors: ['不', '義', '闇', '堕', '悪', '魔', '混沌'] },
-          { answer: '疑心暗鬼', reading: 'ぎしんあんき', question: '疑い出すと、何でもないことまで怖くなること。', explanation: '疑いの心が幽霊を生む。', distractors: ['信頼', '確信', '安心', '平和', '平', '常'] },
-          { answer: '順風満帆', reading: 'じゅんぷうまんぱん', question: '物事が非常に順調に進むこと。', explanation: '追い風を受けて帆を張る様子。', distractors: ['逆境', '苦難', '停', '滞', '荒', '波', '難', '所'] },
-          { answer: '晴天霹靂', reading: 'せいてんのへきれき', question: '突然起こる、予想外の大きな出来事。', explanation: '青空に急に雷が鳴ること。', distractors: ['予定', '当然', '必然', '穏', 'やか', '日', '常'] },
-          { answer: '正々堂々', reading: 'せいせいどうどう', question: '卑怯なことをせず、真っ向から勝負すること。', explanation: '態度が立派で正しい様子。', distractors: ['卑怯', '陰湿', '裏', '工作', '不正'] }
+          { answer: '五里霧中', reading: 'ごりむちゅう', question: '手がかりがなく、どうしていいか迷うこと。', explanation: '深い霧の中で方向を失うこと。', distractors: ['明', '白', '発', '見', '解', '決', '光', '明'] },
+          { answer: '言行一致', reading: 'げんこういっち', question: '言うことと、することと同じであること。', explanation: '口先だけでなく実行すること。', distractors: ['矛', '盾', '反', '対', '嘘', '偽', '裏', '切'] },
+          { answer: '三位一体', reading: 'さんみいったい', question: '三つのものが一つに組み合わさること。', explanation: 'バラバラなものが協力して一つになる。', distractors: ['分', '離', '分', '裂', '対', '立', '個', '別'] },
+          { answer: '主客転倒', reading: 'しゅかくてんとう', question: '立場や重要度が逆転してしまうこと。', explanation: '主人と客が入れ替わるという意味。', distractors: ['正', '常', '順', '位', '本', '来', '当', '然'] },
+          { answer: '諸行無常', reading: 'しょぎょうむじょう', question: '世の中のすべてのものは、絶えず変化すること。', explanation: '永遠に変わらないものはない。', distractors: ['永', '遠', '不', '変', '固', '定', '恒', '久'] },
+          { answer: '針小棒大', reading: 'しんしょうぼうだい', question: 'ささいなことを、大げさに言うこと。', explanation: '針ほどのことを棒ほどに言う。', distractors: ['事', '実', '正', '確', '過', '小', '微', '細'] },
+          { answer: '画龍点睛', reading: 'がりょうてんせい', question: '物事を完成させるための、最後の仕上げ。', explanation: '龍の絵に目を描き入れること。', distractors: ['失', '敗', '中', '途', '未', '完', '略', '式'] },
+          { answer: '勧善懲悪', reading: 'かんぜんちょうあく', question: '善いことを奨励し、悪いことを懲らしめること。', explanation: '正義が勝つストーリー。', distractors: ['不', '義', '闇', '堕', '悪', '魔', '混', '沌'] },
+          { answer: '疑心暗鬼', reading: 'ぎしんあんき', question: '疑い出すと、何でもないことまで怖くなること。', explanation: '疑いの心が幽霊を生む。', distractors: ['信', '頼', '確', '信', '安', '心', '平', '和'] },
+          { answer: '順風満帆', reading: 'じゅんぷうまんぱん', question: '物事が非常に順調に進むこと。', explanation: '追い風を受けて帆を張る様子。', distractors: ['逆', '境', '苦', '難', '停', '滞', '荒', '波'] },
+          { answer: '晴天霹靂', reading: 'せいてんのへきれき', question: '突然起こる、予想外の大きな出来事。', explanation: '青空に急に雷が鳴ること。', distractors: ['予', '定', '当', '然', '必', '然', '穏', '和'] },
+          { answer: '正々堂々', reading: 'せいせいどうどう', question: '卑怯なことをせず、真っ向から勝負すること。', explanation: '態度が立派で正しい様子。', distractors: ['卑', '怯', '陰', '湿', '裏', '道', '不', '正'] }
         ],
         high_school: [
-          { answer: '臥薪嘗胆', reading: 'がしんしょうたん', question: '復讐や目的達成のために、苦労に耐えること。', explanation: '薪の上で寝て苦い胆をなめる故事。', distractors: ['成功', '安穏', '妥', '協', '幸福', '怠', '惰'] },
+          { answer: '臥薪嘗胆', reading: 'がしんしょうたん', question: '復讐や目的達成のために、苦労に耐えること。', explanation: '薪の上で寝て苦い胆をなめる故事。', distractors: ['成', '功', '安', '穏', '妥', '協', '幸', '福'] },
           { answer: '竜頭蛇尾', reading: 'りゅうとうだび', question: '初めは勢いが良いが、終わりがダメなこと。', explanation: '竜の頭に蛇の尻尾。', distractors: ['徹', '頭', '徹', '尾', '完', '璧', '有', '終'] },
-          { answer: '呉越同舟', reading: 'ごえつどうしゅう', question: '敵同士が同じ場所にいたり、協力したりすること。', explanation: '仲の悪い者同士が同じ舟に乗る。', distractors: ['親', '密', '協力', '対', '立', '分離', '孤独'] },
-          { answer: '換骨奪胎', reading: 'かんこつだったい', question: '既存のものに独自の工夫を加え、新しくすること。', explanation: '骨を替え、胎を奪い取るという意。', distractors: ['模倣', '盗作', '剽', '窃', '完全', '新作'] },
-          { answer: '雲散霧消', reading: 'うんさんむしょう', question: 'あとかたもなく、きれいに消えてなくなること。', explanation: '雲が散り霧が消える。', distractors: ['残留', '固定', '定', '着', '不', '変', '実', '体'] },
-          { answer: '紆余曲折', reading: 'うよきょくせつ', question: '事情が複雑で、解決まで手間取ること。', explanation: '道が曲がりくねっていること。', distractors: ['一直', '線', '単純', '明快', '即', '決'] },
+          { answer: '呉越同舟', reading: 'ごえつどうしゅう', question: '敵同士が同じ場所にいたり、協力したりすること。', explanation: '仲の悪い者同士が同じ舟に乗る。', distractors: ['親', '密', '協', '力', '対', '立', '分', '離'] },
+          { answer: '換骨奪胎', reading: 'かんこつだったい', question: '既存のものに独自の工夫を加え、新しくすること。', explanation: '骨を替え、胎を奪い取るという意。', distractors: ['模', '倣', '盗', '作', '剽', '窃', '完', '全'] },
+          { answer: '雲散霧消', reading: 'うんさんむしょう', question: 'あとかたもなく、きれいに消えてなくなること。', explanation: '雲が散り霧が消える。', distractors: ['残', '留', '固', '定', '定', '着', '不', '変'] },
+          { answer: '紆余曲折', reading: 'うよきょくせつ', question: '事情が複雑で、解決まで手間取ること。', explanation: '道が曲がりくねっていること。', distractors: ['一', '直', '線', '単', '純', '明', '快', '即', '決'] },
           { answer: '朝三暮四', reading: 'ちょうさんぼし', question: '目先の違いにこだわり、本質が見えないこと。', explanation: 'サルのエサの数の故事。', distractors: ['賢', '明', '洞', '察', '深', '慮', '真', '実'] },
-          { answer: '隔靴掻痒', reading: 'かっかそうよう', question: 'もどかしくて、物足りない感じ。', explanation: '靴の上からかゆい所をかく。', distractors: ['満足', '快', '適', '痛', '快', '納得', '実感'] },
+          { answer: '隔靴掻痒', reading: 'かっかそうよう', question: 'もどかしくて、物足りない感じ。', explanation: '靴の上からかゆい所をかく。', distractors: ['満', '足', '快', '適', '痛', '快', '納', '得'] },
           { answer: '感慨無量', reading: 'かんがいむりょう', question: 'はかりしれないほど、深く心に感じること。', explanation: '思いが深く溢れること。', distractors: ['無', '感', '無', '関', '心', '冷', '淡', '浅'] },
           { answer: '急転直下', reading: 'きゅうてんちょっか', question: '事態が急に変わり、一気に解決に向かうこと。', explanation: '急に転じて真っ逆さまに落ちる。', distractors: ['停', '滞', '緩', '慢', '膠', '着', '難', '航'] },
-          { answer: '驚天動地', reading: 'きょうてんどうち', question: '世間をひどく驚かせるような大事件。', explanation: '天を驚かせ地を動かす。', distractors: ['平', '穏', '日常', '些', '細', '静', '寂'] },
-          { answer: '孤立無援', reading: 'こりつむえん', question: '誰の助けもなく、一人ぼっちでいること。', explanation: '周りに味方がいない状態。', distractors: ['協力', '団結', '支援', '大', '勢', '友', '情'] },
-          { answer: '言語道断', reading: 'ごんごどうだん', question: '言葉で言い表せないほど、ひどいこと。', explanation: 'あきれて物も言えない。', distractors: ['称', '賛', '当然', '理', '解', '納', '得'] },
-          { answer: '才色兼備', reading: 'さいしょくけんび', question: 'すぐれた才能と、美しい容姿の両方を持つこと。', explanation: '天は二物を与えた、のたとえ。', distractors: ['平凡', '無', '能', '醜', '悪', '一', '芸'] },
+          { answer: '驚天動地', reading: 'きょうてんどうち', question: '世間をひどく驚かせるような大事件。', explanation: '天を驚かせ地を動かす。', distractors: ['平', '穏', '日', '常', '些', '細', '静', '寂'] },
+          { answer: '孤立無援', reading: 'こりつむえん', question: '誰の助けもなく、一人ぼっちでいること。', explanation: '周りに味方がいない状態。', distractors: ['協', '力', '団', '結', '支', '援', '大', '勢'] },
+          { answer: '言語道断', reading: 'ごんご道断', reading: 'ごんごどうだん', question: '言葉で言い表せないほど、ひどいこと。', explanation: 'あきれて物も言えない。', distractors: ['称', '賛', '当', '然', '理', '解', '納', '得'] },
+          { answer: '才色兼備', reading: 'さいしょくけんび', question: 'すぐれた才能と、美しい容姿の両方を持つこと。', explanation: '天は二物を与えた、のたとえ。', distractors: ['平', '凡', '無', '能', '醜', '悪', '一', '芸'] },
           { answer: '山紫水明', reading: 'さんしすいめい', question: '自然の風景が、清らかで美しいこと。', explanation: '山は紫、水は澄んでいる。', distractors: ['汚', '染', '荒', '廃', '都', '市', '雑', '踏'] },
-          { answer: '首尾一貫', reading: 'しゅびいっかん', question: '最初から最後まで、方針が変わらないこと。', explanation: '頭と尻尾を貫くこと。', distractors: ['矛盾', '変節', '支', '離', '滅', '裂', '朝', '令'] },
+          { answer: '首尾一貫', reading: 'しゅびいっかん', question: '最初から最後まで、方針が変わらないこと。', explanation: '頭と尻尾を貫くこと。', distractors: ['矛', '盾', '変', '節', '支', '離', '滅', '裂'] },
           { answer: '百戦錬磨', reading: 'ひゃくせんれんま', question: '多くの経験を積み、鍛えられていること。', explanation: '百回の戦いで磨かれる。', distractors: ['新', '人', '未', '熟', '初', '心', '素', '人'] },
           { answer: '粉骨砕身', reading: 'ふんこつさいしん', question: '骨を粉にし身を砕くほど、力の限り尽くすこと。', explanation: '一生懸命努力すること。', distractors: ['怠', '惰', '安', '逸', '手', '抜', '無', '理'] },
           { answer: '不言実行', reading: 'ふげんじっこう', question: 'あれこれ言わず、黙ってなすべきことをすること。', explanation: '有言実行の反対。', distractors: ['饒', '舌', '空', '論', '弁', '解', '有', '言'] },
@@ -171,20 +171,20 @@
           { answer: '乾坤一擲', reading: 'けんこんいってき', question: '運命をかけて、大勝負をすること。', explanation: '天地を一投げにかける。', distractors: ['堅', '実', '安', '全', '臆', '病', '消', '極'] },
           { answer: '質実剛健', reading: 'しつじつごうけん', question: '飾り気がなく、真面目で、たくましいこと。', explanation: '中身が詰まっていて強い。', distractors: ['華', '美', '軟', '弱', '軽', '薄', '派', '手'] },
           { answer: '唯我独尊', reading: 'ゆいがどくそん', question: '自分だけが尊いと思い上がること。', explanation: 'お釈迦様の言葉とされる。', distractors: ['謙', '遜', '卑', '下', '奉', '仕', '平', '等'] },
-          { answer: '花鳥風月', reading: 'かちょうふうげつ', question: '自然の美しい風景。それを愛でる風流。', explanation: '日本の美の象徴。', distractors: ['殺', '風景', '俗', '世', '実', '利', '現', '代'] },
-          { answer: '厚顔無恥', reading: 'こうがんむち', question: '厚かましくて、恥を知らないこと。', explanation: '面の皮が厚いこと。', distractors: ['謙', '虚', '奥', 'ゆかしい', '慎', '重'] },
-          { answer: '天衣無縫', reading: 'てんいむほう', question: '細工のあとがなく、自然で美しいこと。', explanation: '天人の衣には縫い目がない。', distractors: ['作為', '不', '自然', '不', '器', '用', '無', '骨'] },
+          { answer: '花鳥風月', reading: 'かちょうふうげつ', question: '自然の美しい風景。それを愛でる風流。', explanation: '日本の美の象徴。', distractors: ['殺', '風', '景', '俗', '世', '実', '利'] },
+          { answer: '厚顔無恥', reading: 'こうがんむち', question: '厚かましくて、恥を知らないこと。', explanation: '面の皮が厚いこと。', distractors: ['謙', '虚', '慎', '重', '礼', '儀', '知', '性'] },
+          { answer: '天衣無縫', reading: 'てんいむほう', question: '細工のあとがなく、自然で美しいこと。', explanation: '天人の衣には縫い目がない。', distractors: ['作', '為', '不', '自', '然', '不', '器', '用'] },
           { answer: '南船北馬', reading: 'なんせんほくば', question: '各地を絶えず忙しく旅すること。', explanation: '南は舟、北は馬。', distractors: ['定', '住', '安', '置', '一', '所', '閉', '居'] },
           { answer: '明鏡止水', reading: 'めいきょうしすい', question: '澄み切って落ち着いた心の状態。', explanation: '曇りのない鏡と静止した水。', distractors: ['混', '乱', '煩', '悩', '情', '熱', '殺', '気'] },
           { answer: '泰然自若', reading: 'たいぜんじじゃく', question: '落ち着いていて、動じない様子。', explanation: 'ゆったりと自分を保つ。', distractors: ['狼', '狽', '戦', '慄', '慌', '張', '臆', '病'] },
-          { answer: '孤軍奮闘', reading: 'こぐんふんとう', question: '助けがない中で、一人で懸命に戦うこと。', explanation: '一人でがんばること。', distractors: ['協力', '共', '闘', '加', '勢', '大', '軍'] },
-          { answer: '一騎当千', reading: 'いっきとうせん', question: '一人で千人の敵に対抗できるほど強いこと。', explanation: '人並み外れた能力。', distractors: ['弱', '小', '無', '力', '平凡', '凡', '才'] },
+          { answer: '孤軍奮闘', reading: 'こぐんふんとう', question: '助けがない中で、一人で懸命に戦うこと。', explanation: '一人でがんばること。', distractors: ['協', '力', '共', '闘', '加', '勢', '大', '軍'] },
+          { answer: '一騎当千', reading: 'いっきとうせん', question: '一人で千人の敵に対抗できるほど強いこと。', explanation: '人並み外れた能力。', distractors: ['弱', '小', '無', '力', '平', '凡', '凡', '才'] },
           { answer: '栄枯盛衰', reading: 'えいこせいすい', question: '盛んな時と衰える時があること。', explanation: '世の中の移り変わり。', distractors: ['不', '老', '長', '生', '恒', '久', '安', '泰'] },
           { answer: '夏炉冬扇', reading: 'かろとうせん', question: '時期外れで役に立たないもののたとえ。', explanation: '夏の暖炉、冬の扇。', distractors: ['重', '宝', '必', '需', '有', '用', '適', '時'] },
           { answer: '侃侃諤諤', reading: 'かんかんがくがく', question: '正論を堂々と述べ、盛んに議論すること。', explanation: 'ひるまずに主張する。', distractors: ['沈', '黙', '同', '調', '忖', '度', '逃', '避'] },
           { answer: '牛飲馬食', reading: 'ぎゅういんばしょく', question: 'たくさん飲んだり食べたりすること。', explanation: '大食らいのたとえ。', distractors: ['小', '食', '断', '食', '節', '制', '粗', '食'] },
-          { answer: '九死一生', reading: 'きゅうしいっしょう', question: 'ほとんど助かる見込みがない中で、命を拾うこと。', explanation: '九分死んで一分生きる。', distractors: ['安', '泰', '当然', '即', '死', '全', '滅'] },
-          { answer: '玉石混交', reading: 'ぎょくせきこんこう', question: '優れたものと劣ったものが混じっていること。', explanation: '宝石と石ころ。', distractors: ['洗', '練', '純', '粋', '厳', '選', '統一'] },
+          { answer: '九死一生', reading: 'きゅうしいっしょう', question: 'ほとんど助かる見込みがない中で、命を拾うこと。', explanation: '九分死んで一分生きる。', distractors: ['安', '泰', '当', '然', '即', '死', '全', '滅'] },
+          { answer: '玉石混交', reading: 'ぎょくせきこんこう', question: '優れたものと劣ったものが混じっていること。', explanation: '宝石と石ころ。', distractors: ['洗', '練', '純', '粋', '厳', '選', '統', '一'] },
           { answer: '虚心坦懐', reading: 'きょしんたんかい', question: '先入観を持たず、素直な心で接すること。', explanation: 'わだかまりのない心。', distractors: ['偏', '見', '邪', '念', '下', '心', '執', '着'] },
           { answer: '謹厳実直', reading: 'きんげんじっちょく', question: '非常に真面目で、正直なこと。', explanation: '折り目正しい様子。', distractors: ['不', '良', '怠', '慢', '軽', '薄', '不', '真'] },
           { answer: '呉越同舟', reading: 'ごえつどうしゅう', question: '仲の悪い者同士が協力すること。', explanation: '敵対関係にある者が同席する。', distractors: ['親', '友', '固', '執', '拒', '絶', '孤', '独'] }
@@ -252,6 +252,7 @@
 
         useEffect(() => {
           if (!q) return;
+          // 出題ごとに回答とダミーを混ぜてシャッフル
           const all = [
             ...q.answer.split('').map((c, i) => ({ id: `a-${idx}-${i}-${c}`, char: c })), 
             ...q.distractors.slice(0, 4).map((c, i) => ({ id: `d-${idx}-${i}-${c}`, char: c }))
@@ -360,7 +361,7 @@
               {state === 'QUIZ' && <QuizScreen questions={questions} timeLimit={time} onFinish={s => { setScore(s); setState('RESULT'); }} />}
               {state === 'RESULT' && <ResultScreen score={score} total={questions.length} questions={questions} onRestart={() => setState('START')} />}
             </main>
-            <footer className="mt-8 mb-4 text-[10px] font-bold text-gray-400 text-center uppercase tracking-widest opacity-50">Standalone Quiz Engine (100 Idioms)</footer>
+            <footer className="mt-8 mb-4 text-[10px] font-bold text-gray-400 text-center uppercase tracking-widest opacity-50">Standalone Quiz Engine (Strict 1-Kanji Card Version)</footer>
           </div>
         );
       };
